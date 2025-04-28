@@ -1,0 +1,8 @@
+- name: Install paramiko if not present
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Install paramiko with pip
+      ansible.builtin.pip:
+        name: paramiko
+        executable: /root/snap/semaphore/common/ansible_env/bin/pip
