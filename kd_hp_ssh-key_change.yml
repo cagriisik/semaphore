@@ -9,5 +9,5 @@
         command: |
           system-view
           local-user admin
-          password cipher A7@k8#bL
+          password cipher PASS
           save force
