@@ -1,0 +1,14 @@
+---
+- name: KADIN DOGUM ARUBA Disable TELNET SET
+  hosts: KD_aruba_switches
+  gather_facts: no
+  connection: network_cli
+  tasks:
+    - name: Run the Necessary Commands  by Cagri
+      ansible.netcommon.cli_command:
+        command: |
+          system-view
+          undo web-management
+          undo telnet-server
+          save
+          write memory
