@@ -1,14 +1,11 @@
----
-- name: ANA BINA ARUBA Disable TELNET SET
+- name: Disable Telnet on Aruba CX
   hosts: aruba_test
   gather_facts: no
   connection: network_cli
   tasks:
-    - name: Run the Necessary Commands  by Cagri
+    - name: Disable Telnet
       ansible.netcommon.cli_command:
         command: |
-          system-view
-          undo web-management
-          undo telnet-server
-          save
+          configure terminal
+          no telnet-server
           write memory
