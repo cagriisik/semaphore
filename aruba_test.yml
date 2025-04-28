@@ -6,6 +6,6 @@
     - name: Disable Telnet
       ansible.netcommon.cli_command:
         command: |
-          configure terminal
-          no telnet-server
+          system-view
+          undo telnet-server
           write memory
